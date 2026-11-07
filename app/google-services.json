@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "107940829025",
+    "project_id": "histrem-afd71",
+    "storage_bucket": "histrem-afd71.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107940829025:android:17444bfb955dbc7aead720",
+        "android_client_info": {
+          "package_name": "com.dooo.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOcFbWCwAk2B_yE08hgy4Igdfel9vEJ6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107940829025:android:29b7aa12e799ea28ead720",
+        "android_client_info": {
+          "package_name": "com.histrem.tv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOcFbWCwAk2B_yE08hgy4Igdfel9vEJ6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
