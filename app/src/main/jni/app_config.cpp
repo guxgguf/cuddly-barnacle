@@ -2,8 +2,8 @@
 #include <string>
 
 
-std::string SERVER_URL = "https://moveapp.site.je"; //Copy API SERVER URL From Admin Panal->API Setting And Paste Here
-std::string API_KEY = "5Nl2XtHjk8uzMWtN"; //Copy API KEY From Admin Panal->API Setting And Paste Here
+std::string SERVER_URL = "https://www.moveappp.accesscam.org"; //Copy API SERVER URL From Admin Panal->API Setting And Paste Here
+std::string API_KEY = "o6rDmU3QvXw0nRgq"; //Copy API KEY From Admin Panal->API Setting And Paste Here
 std::string ONESIGNAL_APP_ID = "071f8e07-a39c-4137-a23b-3bb03057398d"; //Copy ONESIGNAL APP ID From Onesignal And Paste Here
 bool allowVPN = false; // If false App Will Not Open In VPN
 bool FLAG_SECURE = false; //If True No Screenshort, No Screen Recording in Application
