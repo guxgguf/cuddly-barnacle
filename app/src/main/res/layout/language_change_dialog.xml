@@ -275,7 +275,6 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:cardCornerRadius="10dp"
@@ -293,6 +292,35 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="中国人"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/baloo2_bold"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_arabic"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:cardCornerRadius="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground">
+                    <LinearLayout
+                        android:id="@+id/linearlayout_arabic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/language_dialog_bg">
+                        <TextView
+                            android:id="@+id/textview_arabic"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="العربية"
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:fontFamily="@font/baloo2_bold"
