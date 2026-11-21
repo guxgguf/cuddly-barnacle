@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="track_selection_title">تغيير المسار</string>
+    <string name="share_app_text">مرحباً، حمّل هذا التطبيق لمشاهدة أحدث الأفلام والمسلسلات! رابط التحميل: [YOUR_URL_HERE]</string>
+    <string name="wifiOnly">واي فاي فقط</string>
+    <string name="delete_title">هل أنت متأكد أنك تريد حذف %1$s؟</string>
+    <string name="Explore_Your_Favourite_Content">اكتشف محتواك المفضل</string>
+    <string name="Welcome_to">مرحباً بك في</string>
+    <string name="Community">المجتمع</string>
+    <string name="Forgot_Password">هل نسيت كلمة المرور؟</string>
+    <string name="Hello">أهلاً</string>
+    <string name="Guest">ضيف</string>
+    <string name="Please_Enter_Your_Details_To_Join_Our_Community">الرجاء إدخال بياناتك للانضمام إلى مجتمعنا</string>
+    <string name="Live_TV">البث المباشر</string>
+    <string name="Continue_Playing">متابعة المشاهدة</string>
+    <string name="Most_Popular_Movies">الأفلام الأكثر شعبية</string>
+    <string name="Most_Popular_WebSeries">المسلسلات الأكثر شعبية</string>
+    <string name="Movies_Only_For_You">أفلام مختارة لك</string>
+    <string name="WebSeries_Only_For_You">مسلسلات مختارة لك</string>
+    <string name="Recently_Added_Movies">أفلام أضيفت حديثاً</string>
+    <string name="Recently_Added_Web_Series">مسلسلات أضيفت حديثاً</string>
+    <string name="Movies">الأفلام</string>
+    <string name="Web_Series">المسلسلات</string>
+    <string name="Home_Menu">الرئيسية</string>
+    <string name="Search_Menu">بحث</string>
+    <string name="Movies_Menu">الأفلام</string>
+    <string name="Series_Menu">المسلسلات</string>
+    <string name="Account_Menu">حسابي</string>
+</resources>
