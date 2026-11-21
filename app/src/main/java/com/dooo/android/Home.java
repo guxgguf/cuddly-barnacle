@@ -659,324 +659,51 @@ public class Home extends AppCompatActivity {
             TextView languageDialogHeader = dialog.findViewById(R.id.languageDialogHeader);
             TextView languageDialogSubHeader = dialog.findViewById(R.id.languageDialogSubHeader);
 
-            CardView cardView_english = dialog.findViewById(R.id.cardView_english);
-            CardView cardView_hindi = dialog.findViewById(R.id.cardView_hindi);
-            CardView cardView_bengali = dialog.findViewById(R.id.cardView_bengali);
-            CardView cardView_spanish = dialog.findViewById(R.id.cardView_spanish);
-            CardView cardView_russian = dialog.findViewById(R.id.cardView_russian);
-            CardView cardView_turkish = dialog.findViewById(R.id.cardView_turkish);
-            CardView cardView_chaines = dialog.findViewById(R.id.cardView_chaines);
-
-            LinearLayout linearlayout_english = dialog.findViewById(R.id.linearlayout_english);
-            LinearLayout linearlayout_hindi = dialog.findViewById(R.id.linearlayout_hindi);
-            LinearLayout linearlayout_bengali = dialog.findViewById(R.id.linearlayout_bengali);
-            LinearLayout linearlayout_spanish = dialog.findViewById(R.id.linearlayout_spanish);
-            LinearLayout linearlayout_russian = dialog.findViewById(R.id.linearlayout_russian);
-            LinearLayout linearlayout_turkish = dialog.findViewById(R.id.linearlayout_turkish);
-            LinearLayout linearlayout_chaines = dialog.findViewById(R.id.linearlayout_chaines);
-
-            TextView textview_english = dialog.findViewById(R.id.textview_english);
-            TextView textview_hindi = dialog.findViewById(R.id.textview_hindi);
-            TextView textview_bengali = dialog.findViewById(R.id.textview_bengali);
-            TextView textview_spanish = dialog.findViewById(R.id.textview_spanish);
-            TextView textview_russian = dialog.findViewById(R.id.textview_russian);
-            TextView textview_turkish = dialog.findViewById(R.id.textview_turkish);
-            TextView textview_chaines = dialog.findViewById(R.id.textview_chaines);
+            final String[] codes = {"en", "hi", "bn", "es", "ru", "tr", "zh", "ar"};
+            final int[] cardIds = {R.id.cardView_english, R.id.cardView_hindi, R.id.cardView_bengali, R.id.cardView_spanish, R.id.cardView_russian, R.id.cardView_turkish, R.id.cardView_chaines, R.id.cardView_arabic};
+            final int[] layoutIds = {R.id.linearlayout_english, R.id.linearlayout_hindi, R.id.linearlayout_bengali, R.id.linearlayout_spanish, R.id.linearlayout_russian, R.id.linearlayout_turkish, R.id.linearlayout_chaines, R.id.linearlayout_arabic};
+            final int[] textIds = {R.id.textview_english, R.id.textview_hindi, R.id.textview_bengali, R.id.textview_spanish, R.id.textview_russian, R.id.textview_turkish, R.id.textview_chaines, R.id.textview_arabic};
+            final String[] headers = {"Choose Your \nDisplay Language", "अपनी प्रदर्शन भाषा चुनें", "আপনার প্রদর্শন ভাষা \nচয়ন করুন", "Elija su idioma \nde visualización", "Выберите язык \nотображения", "Görüntüleme Dilinizi \nSeçin", "选择您的显示语言", "اختر لغة \nالعرض"};
+            final String[] subHeaders = {"Please select one", "कृपया एक का चयन करें", "অনুগ্রহপূর্বক একটা নির্বাচন করুন", "Por favor, seleccione uno", "Пожалуйста, выберите один", "Lütfen birini seçin", "请选择一项", "الرجاء اختيار لغة"};
 
             TinyDB tinyDB = new TinyDB(context);
             String appLanguage = tinyDB.getString("appLanguage");
-
-
-            if(appLanguage.equals("en") || appLanguage.equals("")) {
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Choose Your \nDisplay Language");
-                languageDialogSubHeader.setText("Please select one");
-                tempLanguage = "en";
-            }
-            else if(appLanguage.equals("hi")) {
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("अपनी प्रदर्शन भाषा चुनें");
-                languageDialogSubHeader.setText("कृपया एक का चयन करें");
-                tempLanguage = "hi";
-            }
-            else if(appLanguage.equals("bn")) {
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("আপনার প্রদর্শন ভাষা \nচয়ন করুন");
-                languageDialogSubHeader.setText("অনুগ্রহপূর্বক একটা নির্বাচন করুন");
-                tempLanguage = "bn";
-            }
-            else if(appLanguage.equals("es")) {
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Elija su idioma \nde visualización");
-                languageDialogSubHeader.setText("Por favor, seleccione uno");
-                tempLanguage = "es";
-            }
-            else if(appLanguage.equals("ru")) {
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Выберите язык \nотображения");
-                languageDialogSubHeader.setText("Пожалуйста, выберите один");
-                tempLanguage = "ru";
-            }
-            else if(appLanguage.equals("tr")) {
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Görüntüleme Dilinizi \nSeçin");
-                languageDialogSubHeader.setText("Lütfen birini seçin");
-                tempLanguage = "tr";
-            }
-            else if(appLanguage.equals("zh")) {
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                languageDialogHeader.setText("选择您的显示语言");
-                languageDialogSubHeader.setText("请选择一项");
-                tempLanguage = "zh";
+            if(appLanguage == null || appLanguage.equals("")) {
+                appLanguage = "en";
             }
 
-
-
-            cardView_english.setOnClickListener(v1->{
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Choose Your \nDisplay Language");
-                languageDialogSubHeader.setText("Please select one");
-                tempLanguage = "en";
-            });
-            cardView_hindi.setOnClickListener(v2->{
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("अपनी प्रदर्शन भाषा चुनें");
-                languageDialogSubHeader.setText("कृपया एक का चयन करें");
-                tempLanguage = "hi";
-            });
-            cardView_bengali.setOnClickListener(v3->{
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("আপনার প্রদর্শন ভাষা \nচয়ন করুন");
-                languageDialogSubHeader.setText("অনুগ্রহপূর্বক একটা নির্বাচন করুন");
-                tempLanguage = "bn";
-            });
-            cardView_spanish.setOnClickListener(v4->{
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Elija su idioma \nde visualización");
-                languageDialogSubHeader.setText("Por favor, seleccione uno");
-                tempLanguage = "es";
-            });
-            cardView_russian.setOnClickListener(v5->{
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Выберите язык \nотображения");
-                languageDialogSubHeader.setText("Пожалуйста, выберите один");
-                tempLanguage = "ru";
-            });
-            cardView_turkish.setOnClickListener(v6->{
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                textview_chaines.setTextColor(Color.WHITE);
-                languageDialogHeader.setText("Görüntüleme Dilinizi \nSeçin");
-                languageDialogSubHeader.setText("Lütfen birini seçin");
-                tempLanguage = "tr";
-            });
-            cardView_chaines.setOnClickListener(v7->{
-                linearlayout_english.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_hindi.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_bengali.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_spanish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_russian.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_turkish.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
-                linearlayout_chaines.setBackground(AppCompatResources.getDrawable(context, R.color.white));
-                textview_english.setTextColor(Color.WHITE);
-                textview_hindi.setTextColor(Color.WHITE);
-                textview_bengali.setTextColor(Color.WHITE);
-                textview_spanish.setTextColor(Color.WHITE);
-                textview_russian.setTextColor(Color.WHITE);
-                textview_turkish.setTextColor(Color.WHITE);
-                textview_chaines.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
-                languageDialogHeader.setText("选择您的显示语言");
-                languageDialogSubHeader.setText("请选择一项");
-                tempLanguage = "zh";
-            });
+            final Runnable[] selectors = new Runnable[codes.length];
+            for(int i = 0; i < codes.length; i++) {
+                final int index = i;
+                selectors[i] = () -> {
+                    for(int j = 0; j < codes.length; j++) {
+                        LinearLayout itemLayout = dialog.findViewById(layoutIds[j]);
+                        TextView itemText = dialog.findViewById(textIds[j]);
+                        if(j == index) {
+                            itemLayout.setBackground(AppCompatResources.getDrawable(context, R.color.white));
+                            itemText.setTextColor(ContextCompat.getColor(context, R.color.Red_Smooth));
+                        } else {
+                            itemLayout.setBackground(AppCompatResources.getDrawable(context, R.drawable.language_dialog_bg));
+                            itemText.setTextColor(Color.WHITE);
+                        }
+                    }
+                    languageDialogHeader.setText(headers[index]);
+                    languageDialogSubHeader.setText(subHeaders[index]);
+                    tempLanguage = codes[index];
+                };
+                CardView itemCard = dialog.findViewById(cardIds[i]);
+                itemCard.setOnClickListener(v1 -> selectors[index].run());
+            }
+            for(int i = 0; i < codes.length; i++) {
+                if(codes[i].equals(appLanguage)) {
+                    selectors[i].run();
+                }
+            }
 
             ImageView Coupan_Dialog_save = dialog.findViewById(R.id.Coupan_Dialog_save);
             Coupan_Dialog_save.setOnClickListener(vSave->{
-                if(tempLanguage.equals("en")) {
-                    tinyDB.putString("appLanguage", "en");
-                } else if(tempLanguage.equals("hi")) {
-                    tinyDB.putString("appLanguage", "hi");
-                }
-                else if(tempLanguage.equals("bn")) {
-                    tinyDB.putString("appLanguage", "bn");
-                }
-                else if(tempLanguage.equals("es")) {
-                    tinyDB.putString("appLanguage", "es");
-                }
-                else if(tempLanguage.equals("ru")) {
-                    tinyDB.putString("appLanguage", "ru");
-                } else if(tempLanguage.equals("tr")) {
-                    tinyDB.putString("appLanguage", "tr");
-                }
-                else if(tempLanguage.equals("zh")) {
-                    tinyDB.putString("appLanguage", "zh");
+                if(!tempLanguage.equals("")) {
+                    tinyDB.putString("appLanguage", tempLanguage);
                 }
                 dialog.dismiss();
                 Intent languageIntent = new Intent(Home.this, Splash.class);
