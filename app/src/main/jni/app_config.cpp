@@ -5,11 +5,11 @@
 std::string SERVER_URL = "https://www.moveappp.accesscam.org"; //Copy API SERVER URL From Admin Panal->API Setting And Paste Here
 std::string API_KEY = "o6rDmU3QvXw0nRgq"; //Copy API KEY From Admin Panal->API Setting And Paste Here
 std::string ONESIGNAL_APP_ID = "071f8e07-a39c-4137-a23b-3bb03057398d"; //Copy ONESIGNAL APP ID From Onesignal And Paste Here
-bool allowVPN = false; // If false App Will Not Open In VPN
+bool allowVPN = true; // If false App Will Not Open In VPN
 bool FLAG_SECURE = false; //If True No Screenshort, No Screen Recording in Application
 bool allowRoot = true; // If false App Will Not Open In Rooted Device
 std::string YOUTUBE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-bool unity_ad_testMode = false;
+bool unity_ad_testMode = true;
 
 
 
