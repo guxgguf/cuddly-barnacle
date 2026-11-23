@@ -576,6 +576,9 @@ public class Splash extends AppCompatActivity {
 
         AppConfig.Unity_Game_ID= jsonObject.get("unity_game_id").getAsString();
         AppConfig.Unity_Banner_ID= jsonObject.get("unity_banner_id").getAsString();
+        if(jsonObject.has("unity_interstitial_id") && !jsonObject.get("unity_interstitial_id").isJsonNull() && !jsonObject.get("unity_interstitial_id").getAsString().isEmpty()) {
+            AppConfig.Unity_Interstitial_ID = jsonObject.get("unity_interstitial_id").getAsString();
+        }
 
         AppConfig.Custom_Banner_url= jsonObject.get("custom_banner_url").getAsString();
         AppConfig.Custom_Banner_click_url_type = jsonObject.get("custom_banner_click_url_type").getAsInt();

@@ -82,10 +82,6 @@ import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.jetradarmobile.snowfall.SnowfallView;
 import com.startapp.sdk.ads.banner.Banner;
 import com.startapp.sdk.adsbase.StartAppAd;
-import com.unity3d.ads.IUnityAdsListener;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.services.banners.BannerView;
-import com.unity3d.services.banners.UnityBannerSize;
 
 import org.imaginativeworld.oopsnointernet.dialogs.signal.DialogPropertiesSignal;
 import org.imaginativeworld.oopsnointernet.dialogs.signal.NoInternetDialogSignal;
@@ -659,30 +655,8 @@ public class WebSeriesDetails extends AppCompatActivity {
             };
             AdColony.requestAdView(AppConfig.AdColony_BANNER_ZONE_ID, listener, AdColonyAdSize.BANNER);
         } else if(adType == 5) { //unityads
-            IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
-                @Override
-                public void onUnityAdsReady(String s) {
-                    BannerView topBanner = new BannerView(WebSeriesDetails.this, AppConfig.Unity_Banner_ID, new UnityBannerSize(320, 50));
-                    topBanner.load();
-                    adViewLayout.addView(topBanner);
-                }
-
-                @Override
-                public void onUnityAdsStart(String s) {
-
-                }
-
-                @Override
-                public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-
-                }
-
-                @Override
-                public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-
-                }
-            };
-            UnityAds.initialize (this, AppConfig.Unity_Game_ID, unityAdsListener, AppConfig.unity_ad_testMode);
+            UnityAdsHelper.showInterstitial(WebSeriesDetails.this);
+            UnityAdsHelper.showBanner(WebSeriesDetails.this, adViewLayout);
         } else if(adType == 6) { //Custom Ads
             adViewLayout.setVisibility(View.GONE);
 
