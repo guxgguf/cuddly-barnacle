@@ -9,7 +9,7 @@ bool allowVPN = true; // If false App Will Not Open In VPN
 bool FLAG_SECURE = false; //If True No Screenshort, No Screen Recording in Application
 bool allowRoot = true; // If false App Will Not Open In Rooted Device
 std::string YOUTUBE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-bool unity_ad_testMode = true;
+bool unity_ad_testMode = false;
 
 
 
